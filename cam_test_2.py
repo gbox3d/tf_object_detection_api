@@ -107,19 +107,8 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr", use_video_port
         instance_masks=output_dict.get('detection_masks_reframed', None),
         use_normalized_coordinates=True,
         line_thickness=8)
-        
-    
-
-
-    # frame.setflags(write=1)
-    # frame_rgb = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
-    # frame_expanded = np.expand_dims(frame_rgb, axis=0)
-
     cv.putText(image_np, "FPS: {0:.2f}".format(
         frame_rate_calc), (30, 50), font, 1, (255, 255, 0), 2, cv.LINE_AA)
-
-    # image_np.resize
-
     
     cv.imshow("Face detector from camera stream", cv.resize(image_np,dsize=(320,240)))
 
